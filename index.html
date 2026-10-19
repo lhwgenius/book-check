@@ -33,18 +33,43 @@
   li .a { color: #888; font-size: 13px; }
   .tag { flex: none; font-size: 13px; font-weight: 700; color: #fff; border-radius: 8px; padding: 3px 7px; }
   .foot { margin-top: 28px; font-size: 13px; color: #999; text-align: center; }
+
+  .tabs { display: flex; gap: 8px; margin: 8px 0 16px; }
+  .tabs button { flex: 1; font-size: 19px; padding: 12px 6px; background: #e4e0d6; color: #333; border-radius: 12px; }
+  .tabs button.on { background: #333; color: #fff; }
+  #tab-lib .when { font-size: 16px; color: #444; background: #fff; border-radius: 10px; padding: 10px 12px; margin: 0 0 6px; }
+  #tab-lib h2 { font-size: 22px; margin: 22px 0 6px; padding-bottom: 4px; border-bottom: 3px solid #2e9d4f; }
+  #tab-lib h3 { font-size: 19px; margin: 12px 0 6px; }
+  #tab-lib ul { list-style: none; padding: 0; margin: 0; }
+  #tab-lib li { display: block; background: #fff; border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; font-size: 19px; }
+  #tab-lib li b { font-size: 20px; word-break: keep-all; }
+  #tab-lib .s { display: block; color: #555; font-size: 15px; margin-top: 2px; }
+  #tab-lib .none { font-size: 17px; color: #666; margin: 4px 2px; }
+  #tab-lib .later { background: #eceff4; border-radius: 12px; padding: 8px 12px; margin: 10px 0; }
+  #tab-lib .later h4 { font-size: 16px; margin: 4px 0 6px; color: #444; }
+  #tab-lib .later li { background: transparent; padding: 4px 0; margin: 0; font-size: 15px; color: #444; }
+  #tab-lib .later li b { font-size: 15px; }
+  #tab-lib .tag { display: inline-block; background: #dff1e4; color: #23683a; border-radius: 6px; padding: 1px 6px; font-size: 13px; font-weight: 700; }
+  #tab-lib .out { font-size: 15px; color: #555; background: #fff8e6; border-radius: 12px; padding: 10px 12px; margin: 10px 0; }
+  #tab-lib .out h4 { font-size: 16px; margin: 0 0 4px; }
+  #tab-lib .out li { background: transparent; padding: 2px 0; margin: 0; font-size: 15px; }
+  #tab-lib .note { font-size: 13px; color: #888; margin-top: 18px; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>📚 우리집 책 확인</h1>
+  <div class="tabs"><button type="button" id="b-search" class="on">🔍 책 검색</button><button type="button" id="b-lib">📍 도서관 추천 책</button></div>
+<div id="tab-search">
   <p class="sub">책 제목을 입력하면 읽은 책인지 알려 드려요.</p>
   <form id="f" autocomplete="off">
     <input id="q" type="search" placeholder="예: 아카데미 3" enterkeyhint="search" autofocus>
     <button type="submit">검색</button>
   </form>
   <div id="result"></div>
-  <p class="foot">목록 968권 · 2026-10-17 15:18 기준</p>
+</div>
+<div id="tab-lib" hidden><p class="when">마지막 확인: <b>2026-10-19 12:52</b></p><h2>울산 북구 기적의도서관</h2><h3>✅ 지금 빌리기 좋은 책 (8권)</h3><ul><li><b>무적의 고양이 손 3</b><span class='s'>청구기호 822-우86무-3 · 기적의도서관 자료실</span></li><li><b>십 년 가게와 마법사들 4</b><span class='s'>청구기호 822-히295십ㄴ-4 · 기적의도서관 자료실</span></li><li><b>내 멋대로 산타 뽑기 3</b><span class='s'>청구기호 813.7-최67내ㅁ-3 · 기적의도서관 자료실</span></li><li><b>내 멋대로 급식 뽑기</b><span class='s'>청구기호 813.7-최67내ㄱ · 기적의도서관 자료실</span></li><li><b>마이 가디언 1</b><span class='s'>청구기호 813.7-이73마 · 기적의도서관 자료실</span></li><li><b>십 년 가게와 마법사들 1</b><span class='s'>청구기호 822-히295십ㄴ-1 · 기적의도서관 자료실</span></li><li><b>드래곤 마스터 3</b><span class='s'>청구기호 841-웨57드-3 · 기적의도서관 자료실</span></li><li><b>고양이 해결사 깜냥 1</b><span class='s'>청구기호 813.7-홍38고-1 · 기적의도서관 자료실</span></li></ul><div class='later'><h4>📚 앞 권을 먼저 읽어요</h4><ul><li>무적의 고양이 손 4 — <b>3권을 먼저 읽어요</b> <span class='tag'>3권도 여기 있어요</span></li><li>십 년 가게와 마법사들 5 — <b>4권을 먼저 읽어요</b> <span class='tag'>4권도 여기 있어요</span></li><li>내 멋대로 산타 뽑기 4 — <b>3권을 먼저 읽어요</b> <span class='tag'>3권도 여기 있어요</span></li><li>마이 가디언 2 — <b>1권을 먼저 읽어요</b> <span class='tag'>1권도 여기 있어요</span></li></ul></div><h2>울산 중구 종갓집도서관</h2><h3>✅ 지금 빌리기 좋은 책 (5권)</h3><ul><li><b>내 멋대로 산타 뽑기 3</b><span class='s'>청구기호 아 813.8-최67ㄴ-12 · [종갓집]유아어린이자료실 (1층)</span></li><li><b>내 멋대로 행운 뽑기</b><span class='s'>청구기호 아 813.8-최67ㄴ-6 · [종갓집]유아어린이자료실 (1층)</span></li><li><b>마이 가디언 1</b><span class='s'>청구기호 아 808.9-책68ㅇ-42 · [종갓집]유아어린이자료실 (1층)</span></li><li><b>십 년 가게와 마법사들 1</b><span class='s'>청구기호 아 833.8-히295십-1 · [종갓집]유아어린이자료실 (1층)</span></li><li><b>고양이 해결사 깜냥 1</b><span class='s'>청구기호 아 813.8-홍38ㄱ-1=2 · [종갓집]유아어린이자료실 (1층)</span></li></ul><div class='out'><h4>⏳ 대출 중</h4><ul><li>태양의 마녀 나코와 코기 봉봉 4 — 10월 24일 반납 예정</li><li>내 멋대로 산타 뽑기 4 — 10월 27일 반납 예정</li><li>내 멋대로 급식 뽑기 — 11월 01일 반납 예정</li><li>팥빙수 눈사람 펑펑 3 — 10월 24일 반납 예정</li><li>마이 가디언 2 — 10월 31일 반납 예정</li><li>내 인생 치트 키 — 10월 31일 반납 예정</li><li>생일엔 마라탕 1 — 10월 30일 반납 예정</li><li>드래곤 마스터 3 — 10월 24일, 10월 29일 반납 예정</li></ul></div><p class='note'>이미 읽은 책은 뺐어요. 확인한 시각 기준이라 지금은 바뀌었을 수 있어요.</p></div>
+  <p class="foot">목록 968권 · 2026-10-19 13:00 기준</p>
 </div>
 <script>
 // 책 확인 - 검색 로직 (build.py가 HTML 안에 그대로 넣습니다)
@@ -195,6 +220,14 @@ document.getElementById('q').addEventListener('input', render);
 document.getElementById('f').addEventListener('submit', function (e) { e.preventDefault(); render(); document.getElementById('q').blur(); });
 var pre = new URLSearchParams(location.search).get('q');
 if (pre) { document.getElementById('q').value = pre; render(); }
+function showTab(lib) {
+  document.getElementById('tab-search').hidden = lib; document.getElementById('tab-lib').hidden = !lib;
+  document.getElementById('b-search').className = lib ? '' : 'on'; document.getElementById('b-lib').className = lib ? 'on' : '';
+  if (history.replaceState) history.replaceState(null, '', lib ? '#lib' : location.pathname + location.search);
+}
+document.getElementById('b-search').addEventListener('click', function () { showTab(false); });
+document.getElementById('b-lib').addEventListener('click', function () { showTab(true); });
+if (location.hash === '#lib') showTab(true);
 </script>
 </body>
 </html>
